@@ -640,4 +640,4 @@ f_banner
 cat templates/texts/bye-CIS
 say_continue
 
-reboot
+
