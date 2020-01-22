@@ -211,7 +211,7 @@ chmod 644 /etc/motd /etc/issue /etc/issue.net
 #1.8 Ensure updates, patches, and additional security software are installed (Not Scored)
 
 apt-get update
-apt-get -y upgrade
+#apt-get -y upgrade
 
 ############################################################
 
@@ -311,7 +311,7 @@ sleep 2
 
 echo "ALL: 10.0.0.0/255.0.0.0" >> /etc/hosts.allow
 echo "ALL: 192.168.0.0/255.255.0.0" >> /etc/hosts.allow
-echo "ALL: 172.16.0.0/255.240.0.0" >> /etc/hosts.allow
+echo "ALL: 172.0.0.0/255.0.0.0" >> /etc/hosts.allow
 
 #3.4.3 Ensure /etc/hosts.deny is configured (Scored)
 
@@ -492,12 +492,12 @@ chown root:root /etc/cron.allow /etc/at.allow
 
 ##Create user for SSH Access
 
-echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
-echo -e "\e[93m[+]\e[00m We will now Create a New User for SSH Access"
-echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
-echo ""
-echo -n " Type the new username: "; read username
-adduser $username
+#echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+#echo -e "\e[93m[+]\e[00m We will now Create a New User for SSH Access"
+#echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
+#echo ""
+#echo -n " Type the new username: "; read username
+#adduser $username
 
 echo -n " Securing SSH..."
 sed s/USERNAME/$username/g templates/sshd_config-CIS > /etc/ssh/sshd_config; echo "OK"
