@@ -33,3 +33,5 @@
 
 # Open inbound ssh(22) connections
  iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT
+ iptables -A INPUT -i eno16 -p all -j ACCEPT
+ iptables -A OUTPUT -i eno16 -p all -j ACCEPT
